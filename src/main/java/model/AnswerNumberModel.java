@@ -3,7 +3,7 @@ package model;
 import java.util.Arrays;
 
 public class AnswerNumberModel {
-    private static final int ANSWER_NUMBER_LENGTH = 3;
+    public static final int ANSWER_NUMBER_LENGTH = 3;
     private int[] answerNumber;
 
     public AnswerNumberModel(int[] answerNumber) {
