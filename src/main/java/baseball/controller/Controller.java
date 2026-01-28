@@ -60,6 +60,8 @@ public class Controller {
             outputView.printResult(gameResult);
             isWin = gameResult.isWin();
         }
+        outputView.printWinMessage();
+        outputView.printContinueQuestion();
         int inputCommand = getValidCommandInput();
         return inputCommand == 2;
     }
