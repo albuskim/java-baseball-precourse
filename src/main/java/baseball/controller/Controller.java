@@ -61,6 +61,6 @@ public class Controller {
             isWin = gameResult.isWin();
         }
         int inputCommand = getValidCommandInput();
-        return inputCommand == 1;
+        return inputCommand == 2;
     }
 }
