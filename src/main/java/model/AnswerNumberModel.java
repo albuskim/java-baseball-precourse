@@ -8,7 +8,7 @@ public class AnswerNumberModel {
 
     public AnswerNumberModel(int[] answerNumber) {
         if (!validate(answerNumber)) {
-            throw new IllegalArgumentException("Invalid answer number");
+            throw new IllegalArgumentException("[Error] Invalid answer number");
         }
         this.answerNumber = answerNumber;
     }
