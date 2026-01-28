@@ -2,9 +2,6 @@
 
 ## 기능 목록
 ### Model
-#### AnswerNumberModel
-1. 현재 게임의 정답이 되는 숫자 배열의 관리
-2. 초기화 시 정답으로 입력된 숫자의 validation
 #### GameResultModel
 1. 사용자가 입력한 숫자에 대한 결과의 관리
 2. 결과 출력을 위한 객체의 stringify

@@ -1,5 +1,7 @@
 package model;
 
+import service.AnswerNumberGenerator;
+
 public class GameResultModel {
     private int strike;
     private int ball;
@@ -18,7 +20,7 @@ public class GameResultModel {
     }
 
     public Boolean isWin() {
-        return strike == AnswerNumberModel.ANSWER_NUMBER_LENGTH;
+        return strike == AnswerNumberGenerator.ANSWER_NUMBER_LENGTH;
     }
 
     public String toString() {
