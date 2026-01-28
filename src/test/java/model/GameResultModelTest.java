@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import baseball.model.GameResultModel;
+
 public class GameResultModelTest {
     @Test
     @DisplayName("GameResultModel 생성 테스트")

@@ -1,6 +1,5 @@
-package view;
+package baseball.view;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class InputView {
@@ -24,7 +23,11 @@ public class InputView {
     }
 
     private int[] parseNumberInput(String input) {
-        return Arrays.stream(input.split("")).mapToInt(Integer::parseInt).toArray();
+        int[] numbers = new int[input.length()];
+        for (int i = 0; i < input.length(); i++) {
+            numbers[i] = Character.getNumericValue(input.charAt(i));
+        }
+        return numbers;
     }
 
     public int readCommandInput() {

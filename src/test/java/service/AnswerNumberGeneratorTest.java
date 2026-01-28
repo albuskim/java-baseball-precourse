@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import baseball.service.AnswerNumberGenerator;
+
 public class AnswerNumberGeneratorTest {
     @Test
     @DisplayName("AnswerNumberGenerator 생성 테스트")

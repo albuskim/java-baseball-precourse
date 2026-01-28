@@ -1,10 +1,10 @@
-package controller;
+package baseball.controller;
 
-import model.GameResultModel;
-import service.AnswerNumberGenerator;
-import service.Judgement;
-import view.InputView;
-import view.OutputView;
+import baseball.model.GameResultModel;
+import baseball.service.AnswerNumberGenerator;
+import baseball.service.Judgement;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 public class Controller {
     private InputView inputView;

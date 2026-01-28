@@ -1,6 +1,6 @@
-package model;
+package baseball.model;
 
-import service.AnswerNumberGenerator;
+import baseball.service.AnswerNumberGenerator;
 
 public class GameResultModel {
     private int strike;

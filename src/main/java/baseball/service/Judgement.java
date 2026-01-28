@@ -1,6 +1,6 @@
-package service;
+package baseball.service;
 
-import model.GameResultModel;
+import baseball.model.GameResultModel;
 
 public class Judgement {
     public GameResultModel judge(int[] answerNumber, int[] inputNumber) {
@@ -22,10 +22,16 @@ public class Judgement {
     private int countBall(int[] answerNumber, int[] inputNumber) {
         int ball = 0;
         for (int i = 0; i < answerNumber.length; i++) {
-            for (int j = 0; j < inputNumber.length; j++) {
-                if (answerNumber[i] == inputNumber[j] && i != j) {
-                    ball++;
-                }
+            ball += countBallForPosition(answerNumber, inputNumber, i);
+        }
+        return ball;
+    }
+
+    private int countBallForPosition(int[] answerNumber, int[] inputNumber, int position) {
+        int ball = 0;
+        for (int j = 0; j < inputNumber.length; j++) {
+            if (answerNumber[position] == inputNumber[j] && position != j) {
+                ball++;
             }
         }
         return ball;
