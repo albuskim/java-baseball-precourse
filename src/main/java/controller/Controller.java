@@ -19,9 +19,33 @@ public class Controller {
 
     public void run() {
         while (true) {
-            int[] answerNumber = answerNumberGenerator.generateAnswerNumber();
+            int[] answerNumber = generateAnswerNumber();
             if (playGame(answerNumber)) {
                 break;
+            }
+        }
+    }
+
+    private int[] generateAnswerNumber() {
+        return answerNumberGenerator.generateAnswerNumber();
+    }
+
+    private int[] getValidInputNumber() {
+        while (true) {
+            try {
+                return inputView.readNumberInput();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private int getValidCommandInput() {
+        while (true) {
+            try {
+                return inputView.readCommandInput();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -29,24 +53,12 @@ public class Controller {
     private boolean playGame(int[] answerNumber) {
         boolean isWin = false;
         while (!isWin) {
-            try {
-                int[] inputNumber = inputView.readNumberInput();
-                GameResultModel gameResult = judgement.judge(answerNumber, inputNumber);
-                outputView.printResult(gameResult);
-                isWin = gameResult.isWin();
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                continue;
-            }
+            int[] inputNumber = getValidInputNumber();
+            GameResultModel gameResult = judgement.judge(answerNumber, inputNumber);
+            outputView.printResult(gameResult);
+            isWin = gameResult.isWin();
         }
-        while (true) {
-            try {
-                int inputCommand = inputView.readCommandInput();
-                return inputCommand == 1;
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                continue;
-            }
-        }
+        int inputCommand = getValidCommandInput();
+        return inputCommand == 1;
     }
 }
