@@ -19,10 +19,11 @@ public class GameResultModel {
         return ball;
     }
 
-    public Boolean isWin() {
+    public boolean isWin() {
         return strike == AnswerNumberGenerator.ANSWER_NUMBER_LENGTH;
     }
 
+    @Override
     public String toString() {
         if (strike == 0 && ball == 0) {
             return "낫싱";

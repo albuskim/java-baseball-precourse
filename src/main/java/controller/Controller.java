@@ -1,8 +1,10 @@
 package controller;
 
-import view.*;
-import service.*;
-import model.*;
+import model.GameResultModel;
+import service.AnswerNumberGenerator;
+import service.Judgement;
+import view.InputView;
+import view.OutputView;
 
 public class Controller {
     private InputView inputView;

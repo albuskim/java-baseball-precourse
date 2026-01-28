@@ -36,7 +36,7 @@ public class InputView {
         return parseCommandInput(input);
     }
 
-    public Boolean validateCommandInput(String input) {
+    public boolean validateCommandInput(String input) {
         return input.matches("^[1-2]$");
     }
 
