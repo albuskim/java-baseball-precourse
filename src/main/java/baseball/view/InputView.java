@@ -31,7 +31,6 @@ public class InputView {
     }
 
     public int readCommandInput() {
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String input = scanner.nextLine();
         if (!validateCommandInput(input)) {
             throw new IllegalArgumentException("[Error] Invalid command input");
