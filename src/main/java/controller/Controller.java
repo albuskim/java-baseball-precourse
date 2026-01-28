@@ -27,18 +27,26 @@ public class Controller {
     }
 
     private boolean playGame(int[] answerNumber) {
-        while (true) {
-            int[] inputNumber = inputView.readNumberInput();
-            GameResultModel gameResult = judgement.judge(answerNumber, inputNumber);
-            outputView.printResult(gameResult);
-            if (gameResult.isWin()) {
-                break;
+        boolean isWin = false;
+        while (!isWin) {
+            try {
+                int[] inputNumber = inputView.readNumberInput();
+                GameResultModel gameResult = judgement.judge(answerNumber, inputNumber);
+                outputView.printResult(gameResult);
+                isWin = gameResult.isWin();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                continue;
             }
         }
-        int inputCommand = inputView.readCommandInput();
-        if (inputCommand == 1) {
-            return true;
+        while (true) {
+            try {
+                int inputCommand = inputView.readCommandInput();
+                return inputCommand == 1;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
         }
-        return false;
     }
 }
